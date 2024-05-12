@@ -12,7 +12,7 @@ class VCO extends Effect {
 
 		this.audioCtx = audioCtx;
 		this._freq = settings.freq ?? 440.0;
-		this._semitones = settings?.semitones ?? 4;
+		this._semitones = settings?.semitones ?? 7;
 
 		this.nodes = {
 			vco1: this.audioCtx.createOscillator() as OscillatorNode,
