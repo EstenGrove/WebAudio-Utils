@@ -1,4 +1,10 @@
-import { Effect, IEffectInput, IEffectOutput, ISettings } from "./Effect";
+import {
+	Effect,
+	IEffectInput,
+	IEffectOutput,
+	ISettings,
+	TLevel,
+} from "./Effect";
 
 export interface IDelaySettings extends ISettings {
 	delayTime: number;
@@ -20,7 +26,7 @@ class Delay extends Effect {
 		this._delayTime = settings?.delayTime ?? 0.5;
 		this._feedback = settings?.feedback ?? 0.3;
 		// Main effect level for this.node (the Main FX Out)
-		this.level = settings?.level ?? 0.5;
+		this.level = (settings?.level ?? 0.5) as TLevel;
 		// this.input = settings?.input as IEffectInput;
 
 		this.nodes = {
