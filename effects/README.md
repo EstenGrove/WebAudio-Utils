@@ -43,3 +43,40 @@ osc.stop(audioCtx.currentTime + 0.25)
 ```
   
 </details>
+
+-------------------------------------------------------
+
+## Using the 'Filter' Class
+Using the `Filter` effect class to apply frequency filtering, boosting and/or attenuating.
+
+<details>
+  <summary>Filter Class Usage</summary>
+
+```tsx
+
+const filter = new Filter(audioCtx, {
+			freq: 5000,
+			type: "highpass",
+			q: 20,
+			gain: 5,
+		});
+
+		const osc: OscillatorNode = new OscillatorNode(audioCtx, {
+			type: "square",
+			frequency: noteFreq,
+		});
+		const osc2: OscillatorNode = new OscillatorNode(audioCtx, {
+			type: "square",
+			frequency: transpose(noteFreq, 12),
+		});
+
+    // connect oscillators to filter node
+    // connect filter node to our output (device speakers)
+		osc.connect(filter.node);
+		osc2.connect(filter.node);
+		filter.connect(audioCtx.destination);
+		osc.start();
+		osc2.start();
+```
+
+</details
