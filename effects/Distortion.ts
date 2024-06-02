@@ -7,6 +7,7 @@ export interface IDistortionSettings extends ISettings {
 
 // ##TODOS:
 // - Improve this._createDistCurve() as the clipping could be smoother.
+// - Implement 'pre/post' gain nodes for finer control over the levels & output
 
 class Distortion extends Effect {
 	private _oversample!: IOversample;
