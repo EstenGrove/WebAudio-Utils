@@ -6,6 +6,15 @@ const createGain = (audioCtx: AudioContext, initialVol: number): GainNode => {
 	return gain;
 };
 
+// Create a media stream node (used with oscillators to create a stream destination node)
+const createStreamNode = (
+	audioCtx: AudioContext
+): MediaStreamAudioDestinationNode => {
+	const streamNode = audioCtx.createMediaStreamDestination();
+
+	return streamNode;
+};
+
 // Cross-browser audio context
 const createAudioContext = (): AudioContext => {
 	const Context = AudioContext || window.AudioContext;
