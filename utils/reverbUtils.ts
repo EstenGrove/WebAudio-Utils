@@ -1,3 +1,4 @@
+// fetches a reverb impulse response when given a source url
 const getReverbArrayBuffer = async (
 	url: string
 ): Promise<ArrayBuffer | unknown> => {
